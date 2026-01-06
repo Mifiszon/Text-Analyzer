@@ -1,0 +1,28 @@
+Wielka awaria Cloudflare. Padła usługa, na której opiera się internet
+Dziś (18 listopada) doszło do globalnej awarii sieci Cloudflare. Amerykańskie przedsiębiorstwo zajmuje się usługami dostarczania treści (CDN), serwerów nazw (DNS), serwera czasu (NTP), ochroną przed atakami i zarządzaniem certyfikatami SSL/TLS. Z jego usług korzysta nawet 20% stron w internecie. Może to oznaczać poważny przestój w działaniu lub nawet całkowity brak dostępu do wielu platform. Padł już m.in. Twitter (x.com). Jeśli widzisz błąd 500 lub 5xx, to najprawdopodobniej problem leży właśnie po tej stronie.
+
+Awaria Cloudflare to poważny problem. Wiele stron jest niedostępnych
+Awaria Cloudflare to poważny problem. Wiele stron jest niedostępnychUnsplash
+Nie działa Cloudflare. Z jego usług korzysta 20% internetu
+Cloudflare świadczy usługi tysiącom platform, serwisów, aplikacji i stron internetowych, wliczając w to cyfrowych gigantów, jak x.com (dawniej Twitter), który właśnie padł. Na jego usługach opierają się wydawcy medialni, platformy e-commerce, serwisy streamingowe czy witryny przedsiębiorstw z listy Fortune 1000. Szacuje się, że obsługuje on niemal 20% wszystkich stron w internecie, w tym 32,8% z listy top 10 000.
+
+Każdy taki przestój w działaniu, będący wynikiem awarii, może oznaczać wielomilionowe straty na firm korzystających z usług Cloudflare. Każda minuta jest na wagę złota i bez wątpienia trwają wzmożone prace nad przywróceniem działania usługi. Na razie nie wiadomo, co jest przyczyną wysypania się Cloudflare. Paradoksalnie może nią być atak DDoS przeprowadzony przez hakerów, przed którym usługi przedsiębiorstwa mają właśnie chronić klientów. Jeśli wejdziesz dziś na jakąś stronę i zobaczysz błąd 500 lub 5xx, to może być właśnie skutek tej awarii.
+
+Panel informacyjny przedstawiający status systemu Cloudflare, z wyróżnionym komunikatem o globalnych problemach sieciowych, aktualizacją oraz szczegółami dotyczącymi śledztwa i prac zespołu technicznego.
+Cloudflare udostępnił komunikat o awarii. Firma prowadzi już dochodzenie, by przywrócić działanie usług cloudflarestatus.com
+"Dochodzenie - Cloudflare jest świadome istnienia oraz bada problem, który wpływa na wielu klientów: szeroko rozpowszechnione błędy 500, [próby korzystania z] Cloudflare Dashboard i API także kończą się niepowodzeniem. Pracujemy, aby zrozumieć pełny wpływ tego problemu i go rozwiązać. Więcej informacji wkrótce" - przekazało Cloudflare we wtorek (18.11) o godz. 12:48 czasu polskiego.
+
+Jakie strony nie działają i kiedy zaczną?
+Jak wynika z danych serwisu downdetector, oprócz x.com są również problemy z dostępem do usług OpenAI i Canva. Sprawdziliśmy także, że nie działa mobiDziennik.
+
+O godzinie 14:04 czasu polskiego Cloudflare powiadomiło, że podczas próby naprawy wyłączyło dostęp WARP w Londynie. Użytkownicy próbujący uzyskać dostęp do sieci za pośrednictwem tego VPN-u nie mogli się połączyć. Niedługo później pojawił się komunikat o przywracaniu tej metody połączenia do stanu sprzed awarii.
+
+Komunikat o wewnętrznym błędzie serwera z kodem 500, wizualizacja statusu połączeń pomiędzy użytkownikiem, punktem pośredniczącym Cloudflare oraz hostem, wskazująca na problem w punkcie Cloudflare.
+Wewnętrzny błąd serwera "Error code 500". To dziś częsty widok na stronach obsługiwanych przez Cloudflare
+Usługodawca namierzył przyczynę usterki. "Problem został zidentyfikowany, a poprawka jest implementowana" - ogłosił Cloudflare o godzinie 14:09 czasu polskiego. Oznacza to, że prawdopodobnie już lada chwila oparte na tych usługach strony, serwisy i aplikacje zaczną znowu działać.
+
+"Nadal pracujemy nad przywróceniem pozostałych usług" - głosi komunikat z godz. 14:13 czasu polskiego.
+
+Cloudflare poinformował o 15:34 czasu polskiego, że wdrożył zmianę, która przywróciła usługi pulpitu nawigacyjnego (dashboardu), ale nadal pracuje nad zniwelowaniem negatywnego wpływu na usługi aplikacji. Już 8 minut później firma przekazała, że zaimplementowała poprawkę i uznaje, że incydent został już rozwiązany. "Nadal monitorujemy w poszukiwaniu błędów, by upewnić się, że wszystkie usługi działają już normalnie" - dodaje.
+
+"Niektórzy klienci mogą nadal doświadczać problemów z logowaniem się do pulpitu nawigacyjnego Cloudflare. Pracujemy nad poprawką, która to naprawi, i wciąż monitorujemy sytuację pod kątem jakichkolwiek dalszych problemów" - czytamy w komunikacie z godz. 15:57 czasu polskiego.

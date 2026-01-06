@@ -1,0 +1,55 @@
+Studencki Festiwal Informatyczny (SFI) – konferencja informatyczna organizowana corocznie przez studentów czterech krakowskich szkół wyższych (AGH, PK, UEK, UJ). Wydarzenie odbywa się wiosną w Krakowie i zrzesza specjalistów, entuzjastów oraz firmy z branży informatycznej. Jego celem jest popularyzacja zagadnień związanych z tworzeniem gier i aplikacji, systemami operacyjnymi, bezpieczeństwem IT, testowaniem oraz ogólnymi aspektami wytwarzania oprogramowania takimi jak np. projektowanie, stosowane metodyki itp.
+
+O Festiwalu
+Pierwsza edycja Festiwalu odbyła się w dniach 25–26 lutego 2005 z inicjatywy studenta Politechniki Krakowskiej – Jana Szumca. Według szacunków organizatorów w wydarzeniu wzięło udział ok. 300 osób.
+
+Począwszy od drugiej edycji, do grona prelegentów dołączali także zagraniczni mówcy. Pierwszym z nich był Andrew S. Tanenbaum. W 2006 zapoczątkowano 3-dniową formę Festiwalu (czwartek-sobota).
+
+W trakcie 7. edycji odbyła się pierwsza w historii wydarzenia prelekcja w formie wideokonferencji poprowadzona przez Stephena Wolframa.
+
+Każdego dnia festiwalu uczestnicy mogą wybierać spośród dwóch ścieżek wykładowych oraz dwóch-trzech ścieżek warsztatowych.
+
+Ze SFI związana jest także seria jednodniowych, popołudniowych wykładów znana pod nazwą mikroSFI[1].
+
+Przez lata popularność SFI znacznie wzrosła – podczas 13. edycji odnotowano około 6000 odsłuchań. Organizatorzy przekonują, iż jest to największa studencka konferencja IT w Polsce.
+
+Organizatorzy
+Od samego początku festiwal organizują wspólnie koła naukowe z czterech krakowskich szkół wyższych: Koło Naukowe BIT[2] z AGH, Koło Naukowe Informatyki UEK, Koło Naukowe Informatyków[3] PK, Koło Studentów Informatyki[4] UJ oraz Koło Naukowe „Epicentrum” UJ[5]. Studentów wspiera także Fundacja Studentów i Absolwentów Akademii Górniczo-Hutniczej w Krakowie ACADEMICA[6].
+
+Festiwal jest organizowany non-profit, a wstęp jest bezpłatny dla wszystkich uczestników[7].
+
+Prelegenci
+Każdego roku Festiwal gości wielu specjalistów z branży IT, pośród których można spotkać m.in. twórców języków programowania, autorów książek i podręczników, autorów powszechnie stosowanego oprogramowania komputerowego, a także specjalistów pracujących na co dzień w firmach i instytucjach publicznych. Z roku na rok zwiększa się liczba zagranicznych prelegentów, którzy występują podczas SFI.
+
+Wybrani prelegenci z dotychczasowych edycji:
+
+polscy
+Jakub Mrugalski
+Jakub Pilimon
+Jarosław Duda
+Jarosław Pałka
+Jerzy Grębosz
+Paweł Sasko
+Paweł Tkaczyk
+Piotr Konieczny
+Szymon Paluch
+Dominika Zając
+Andrzej Koziński
+zagraniczni
+Andrew S. Tanenbaum
+Bram Moolenaar
+Bruce Lawson
+Joe Armstrong
+Kevin Warwick
+Larry Wall
+Philip Wadler
+Richard Stallman
+Thomas H. Cormen
+
+W ramach SFI organizowane są także krótkie, ok. 20-minutowe wykłady, do poprowadzenia których może zgłosić się każdy, kto chciałby spróbować swoich sił w roli prelegenta i zaistnieć w świecie IT.
+
+Podcast
+Z powodu globalnej pandemii, 16. edycja Festiwalu planowana na marzec 2020 została przeniesiona. Aby dać swoim uczestnikom namiastkę SFI i możliwość wirtualnego spotkania się z Prelegentami, Organizatorzy wydarzenia podjęli decyzję o stworzeniu własnego podcastu. W pierwszych odcinkach wystąpili: Thiago Klafke, Maciej Korsan, Jakub 'unknow' Mrugalski oraz Kenneth F. Harris. Tak jak i całe SFI, podcast dostępny jest bezpłatnie dla wszystkich tych którzy są zainteresowani zdobyciem wiedzy i poznaniem ciekawych osobistości z branży IT.
+
+SeekFindInput
+Od 9. edycji w ramach Festiwalu organizowany jest także konkurs o nazwie SeekFindInput będący formą grywalizacji dla uczestników. Punkty można zdobywać za udział w wykładach i warsztatach, interakcje z firmami wspierającymi SFI, a także odnajdywać dodatkowe punkty na terenie Festiwalu czy w mediach społecznościowych. Przewidziane są także punkty za specjalne osiągnięcia. Osoby z największą ilością punktów na koniec poszczególnych dni, a także na zakończenie festiwalu otrzymują cenne nagrody.

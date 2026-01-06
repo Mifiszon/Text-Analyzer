@@ -1,0 +1,39 @@
+Postanowiłem darować sobie pierwsze wrażenia, darować sobie test po dwóch tygodniach i z recenzją iPhone’a 17 Pro Max wracam dopiero po miesiącu. Mam o nim całkiem sporo do powiedzenia, bo niemal na pewno będzie to najlepiej sprzedający się telefon tego roku. Problem w tym, że kolejny rok z rzędu powodów do takiej pozycji jest coraz mniej.
+
+Na początek zaznaczę, że sam testowałem iPhone’a 17 Pro Max w wersji z 512 GB pamięci i wiodącym kolorze pomarańczowym. W Polsce trzeba za niego zapłacić 7799 złotych. To stawia go na równi ze składanymi smartfonami konkurencji, do czego nie omieszkam się później odnieść.
+
+Specyfikacja iPhone 17 Pro Max:
+Ekran: 6.90 cala AMOLED z odświeżaniem 120 Hz i  jasnością do 3000 nitów (wartość producenta).
+Procesor: Apple A19 Pro (3nm).
+Pamięć i RAM: 12 GB RAM i 512 GB na dane (NVMe).
+Aparat główny: 48 MP z podwójnym PDAF i OIS.
+Szeroki kąt: 48 MP, PDAF, pole widzenia 120°.
+Teleobiektyw: 48 MP z PDAF i OIS.
+Waga: 233g.
+Bateria i ładowanie: 4832 mAh, 40W ładowanie po kablu, 25W bezprzewodowe, 4.5W zwrotne.
+Długość aktualizacji: 7 aktualizacji iOS.
+Na początku byłem zachwycony designem, teraz – nie za bardzo
+Na etapie przecieków byłem przekonany, że Orange Is The New Black. W zasadzie nadal jestem takiego zdania, ale z jednym małym „ale”. Design iPhone 17 Pro Max bardzo, ale to bardzo cierpi przez obecność bezprzewodowego ładowania. Gdyby ten zbędny bajer zniknął, cała obudowa mogłaby być metalowa, a tylnego panelu nie szpeciłoby szkło, które Apple nazywa Ceramic Shield. Jest paskudne i tyle.
+
+Druga sprawa to wielka wyspa aparatów, bezwstydnie skopiowana od Xiaomi. Jednocześnie wkurza mnie i rozumiem jej istnienie, bo iPhone ma teraz tam większość podzespołów. Czy poprzednia generacja wyglądała lepiej? Owszem. Czy telefon położony na stole nadal się kołysze? Również.
+
+Przejdźmy na boki, gdzie przycisków jest cała masa. Z jednej strony jestem fanem tego, jak przyjemne jest wciśnięcie każdego z nich, odpowiedź przycisku jest bezbłędna i chyba nie do pobicia, może poza wspomnianym Xiaomi i ich haptyką. Z drugiej – przycisk akcji i przycisk do kontroli aparatu sprawdziłem tylko dlatego, że taka moja rola jako recenzenta. Nigdy później przez bity miesiąc ich nie dotknąłem.
+
+Na dole mamy standardowe dla Apple grille głośników i tutaj muszę oddać Apple, co ich. Głośniki nie są dobre, nie są bardzo dobre, są fenomenalne. Namiastka basu, czysty dźwięk i imponująca głośność w urządzeniu, które ostatecznie jest tylko telefonem, robi kolosalne wrażenie.
+
+Zwykle na tym etapie napisałbym, że iPhone 17 Pro Max jest kolejnym smartfonem Apple, który miażdży całą konkurencję haptyką. Nie zrobię tego jednak, ponieważ Xiaomi i OnePlus ich prześcignęli. Tu można mówić co najwyżej o poziomie Samsunga, nic więcej. Jest okej, to wszystko.
+
+Na koniec warto wspomnieć, że iPhone 17 Pro Max jest aluminiowy, a nie tytanowy. Podejrzewam, że chodziło o koszty odróbki i to dlatego Apple zmieniło materiał. Szkoda, bo rysy na pewno będą się tu pojawiać.
+
+Ekran jest piękny, ale Liquid Glass to masakra
+Na froncie iPhone’a 17 Pro Max znajduje się wielki ekran o przekątnej 6.9 cala. Na szczęście otoczono go cienkimi ramkami, więc osoby z dużymi dłońmi będą w stanie obsługiwać go przy pomocy tylko jednej dłoni. Ja nie miałem z tym żadnego problemu.
+
+Panel to oczywiście LTPO, co umożliwia regulowanie częstotliwości odświeżania od 1 do 120 Hz. Apple robi to dobrze – obraz zawsze jest płynny, a statyczne obrazy faktycznie pokazywane są przy 1 Hz. Jasność maksymalna jest kapitalna, a minimalna umożliwia komfortowe czytanie w pełnej ciemności.
+
+Do tego muszę przyznać, że naprawdę polubiłem się z odwzorowaniem kolorów w iPhone’ach. Pasuje mi to, że nie są aż tak soczyste, jak u Samsunga czy OnePlusa. Podobną politykę stosują obecnie Honor i Xiaomi, ale to Apple robiło to pierwsze.
+
+Chwilę poświęcę dla FaceID, które na tym etapie rozwoju jest bezbłędne. Czy brakuje mi tu czytnika w ekranie? Oczywiście, bo moim zdaniem to nadal wygodniejsza biometria, która do tego jest minimalnie szybsza. Drażni mnie też konieczność podwójnego wciśnięcia przycisku zasilania przy płatności.
+
+Na drugim końcu skali mojego zachwytu jest Liquid Glass, jak Apple nazywa teraz swój interfejs. Podzielę się swoją, pewnie niezbyt popularną, opinią. To najbrzydsze oprogramowanie na smartfonie od czasów TouchWiza. Spalcie mnie za to na stosie, będzie to przyjemniejsze przeżycie, niż patrzenie na to oprogramowanie.
+
+Nie mogę też powiedzieć, żeby iOS 26 był jakoś szczególnie bezbłędnym systemem. Nadal nie brakuje crashów aplikacji, a ich czas przechowywania w pamięci nie jest godzien sprzętu, który ma 12 GB RAM. Apple agresywnie ubija je w tle, próbując oszczędzać energię. A skoro już przy tym jesteśmy, to pora ponarzekać na baterię.

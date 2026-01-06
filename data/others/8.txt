@@ -1,0 +1,44 @@
+Gemini 3 zaprezentowane, ale Polska poczeka. Co wiemy o nowej wersji AI od Google?
+
+Skróć artykuł
+Nie tak dawno Gemini "po cichu" wkradło się do wyszukiwarek Google, wcześniej zastępując Asystenta Google, a także dostarczając narzędzi tak niezależnych, jak i wewnątrz całego ekosystemu Google. W świecie AI, gdzie wszystko zmienia się z tygodnia na tydzień, Google… zostało jednak w tyle. Aż do teraz, bowiem premiera Gemini 3 ma sporo zmienić. Na razie w USA.
+
+650 mln użytkowników w miesiącu — takim wynikiem użytkowania Gemini 3 pochwalił się Sundar Pichai, prezes Google. Duża w tym zasługa tego, że już NAWET w Polsce wyszukiwanie AI, oparte na dostosowanym do tego zadania "mniejszym" modelu Gemini, pojawiło się w standardowej wersji najważniejszego narzędzia w portfolio Google — kultowej wyszukiwarki.
+
+Na ten moment Gemini 3 zostało zapowiedziane w poniższych formach:
+
+Wyszukiwanie AI w wyszukiwarce Google oparte na Gemini 3
+Gemini 3 w Gemini App
+W AI Studio i Vertex AI
+W nowym narzędziu, nazwanym Google Antigravity
+Gemini 3 będzie dostępne także w rozbudowanej wersji Gemini 3 Pro, w którym udostępnione będą dla subskrybentów najbardziej zaawansowane narzędzia i możliwości wykraczające poza darmowe wersje narzędzi oparte na Gemini 3.
+
+Szukanie z rozumowaniem
+Dla przeciętnego użytkownika sieci, smartfonów i komputerów to najpewniej najważniejsze pole, na którym AI będzie ingerowało w nasze życie — korzystanie z wyszukiwania w sieci. Google chce całkowicie zmienić paradygmat wyszukiwania i już po części im się to udaje. Co prawda nadal Tryb AI podaje nam linki, ale i wygodne podsumowanie, które… zniechęca zupełnie do klikania w nie.
+
+Teraz ma być jeszcze wygodniej.
+
+Główną zmianą w Gemini 3 jest poprawione i rozbudowane rozumowanie. Każde skomplikowane zapytanie będzie przechodziło bardziej skomplikowany proces "myślowy". Gemini 3 w pewnym sensie będzie samo zapętlać się w szukaniu właściwych ścieżek i testowaniu odpowiedzi, by spośród wielu możliwych outputów wybrać te możliwie najlepsze.
+
+Jednocześnie wyszukiwarka ma sama analizować treść zapytania pod kątem jego skomplikowania i desygnować odpowiednio skomplikowane modele do odpowiednich procesów.
+
+Dużą nowością będzie obrazowe przedstawianie wyników. Gemini AI w wyszukiwarce będzie w stanie tworzyć proste obrazy i animacje do ilustrowania odpowiedzi na zapytania. Jeżeli np. poprosimy o porównanie — może stworzyć wykres, a gdy potrzebna będzie wizualizacja procesu fizycznego — także animację, która pokaże np. oddziaływania kilku ciał na siebie. Tu Google dość sprytnie w swojej prezentacji nawiązały do słynnego "Problemu trzech ciał".
+
+Nowości w wyszukiwarce dostępne są na razie wyłącznie w USA dla subskrybentów Gemini Pro i Ultra.
+
+Gemini App z Gemini 3
+Drugim ważnym obszarem działania Gemini w wersji trzeciej jest rzecz jasna samo Gemini App, czyli po prostu aplikacja Gemini. Tu Google chwali się głównie "świetnym" (ich zdaniem) kodowaniem w stylu "vibe coding". Jest to metoda tworzenia oprogramowania polegająca na używaniu sztucznej inteligencji do generowania kodu na podstawie opisów w języku naturalnym, zamiast tradycyjnego pisania kodu linijka po linijce. Oznacza to w praktyce tyle, że my opisujemy naturalnie, co nam trzeba, a Gemini 3 to tworzy od strony technicznej. Można więc opisać efekt końcowy, a AI zrobi wszystko, by sprostać naszym oczekiwaniom.
+
+Drugim nowym elementem są generatywne interfejsy. To znaczy, że w zależności od potrzeb i treści, odpowiedzi mogą mieć formę galerii, tabeli, wykresów. Co więcej, to samo tyczy się… dodatkowych pytań. Może na przykład pojawić nam się chmura tagów, z której będziemy musieli wybrać interesujące nas obszary wyszukania. Albo suwak, którym ustalać będziemy pewne zmienne. Ba, możemy nawet poprosić o przekazanie nam wyniku w wygodnej prezentacji lub na infografice i Gemini 3 też powinno to zrobić…
+
+…na razie w USA i dla subskrybentów planów Pro i Ultimate.
+
+Gemini Agent to następna nowość związana z aplikacją Gemini. To eksperymentalna funkcja, która obsługuje wieloetapowe zadania bezpośrednio w Gemini. Łączy się z aplikacjami Google, aby zarządzać Kalendarzem, dodawać przypomnienia lub po prostu możesz poprosić go, aby "uporządkował moją skrzynkę odbiorczą", a on ustawi priorytety zadań i przygotuje szkice odpowiedzi do Twojej akceptacji.
+
+Agent działa też jako "pomocnik" pracy w środowisku systemu lub samej przeglądarki. Podobne rozwiązanie pokazało niedawno Perplexity. Możemy więc np. poprosić agenta o zamówienie konkretnej pizzy na konkretny adres. Gemini sam może znaleźć informacje o domowym adresie (np. z Map Google), porównać oferty i przygotować zamówienie.
+
+Google informuje jednak, że agent wewnątrz Gemini został zaprojektowany tak, by prosić o potwierdzenie przed wykonaniem krytycznych działań, takich jak zakupy czy wysyłanie wiadomości, a użytkownik możesz w każdej chwili przejąć stery. Wszystko to też na razie w USA.
+
+Google Antigravity
+Odrębny akapit poświęcimy tematowi Google Antigravity. To platforma programistyczna, która wg. Google ma szansę zrewolucjonizować sposób, w jaki tworzone jest oprogramowanie. Oparta na sztucznej inteligencji i najnowszym modelu Gemini 3, platforma ta wprowadza nowy paradygmat w projektowaniu IDE (zintegrowanych środowisk programistycznych), kładąc nacisk na autonomię i współpracę z agentami AI.
+

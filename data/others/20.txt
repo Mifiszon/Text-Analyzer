@@ -1,0 +1,104 @@
+Wprowadzenie do Pythona
+Czym jest Python?
+Python to popularny język programowania. Został stworzony przez Guido van Rossuma i wydany w 1991 roku.
+
+Służy do:
+
+tworzenie stron internetowych (po stronie serwera),
+rozwój oprogramowania,
+matematyka,
+skrypty systemowe.
+Co potrafi Python?
+Pythona można używać na serwerze do tworzenia aplikacji internetowych.
+Pythona można używać razem z oprogramowaniem do tworzenia przepływów pracy.
+Python może łączyć się z systemami baz danych. Potrafi również odczytywać i modyfikować pliki.
+Pythona można używać do przetwarzania dużych zbiorów danych i wykonywania skomplikowanych obliczeń matematycznych.
+Pythona można używać do szybkiego prototypowania lub do tworzenia oprogramowania gotowego do produkcji.
+Dlaczego Python?
+Python działa na różnych platformach (Windows, Mac, Linux, Raspberry Pi itp.).
+Python ma prostą składnię podobną do języka angielskiego.
+Składnia języka Python umożliwia programistom pisanie programów składających się z mniejszej liczby wierszy niż w przypadku niektórych innych języków programowania.
+Python działa w oparciu o system interpretacyjny, co oznacza, że kod może być wykonywany natychmiast po napisaniu. Dzięki temu prototypowanie może być bardzo szybkie.
+Język Python można traktować proceduralnie, obiektowo i funkcyjnie.
+Dobrze wiedzieć
+Najnowszą główną wersją języka Python jest Python 3, którego będziemy używać w tym samouczku.
+W tym samouczku Python zostanie napisany w edytorze tekstu. Możliwe jest pisanie w zintegrowanym środowisku programistycznym, takim jak Thonny, Pycharm, Netbeans lub Eclipse, które są szczególnie przydatne podczas zarządzania większymi zbiorami plików Pythona.
+Składnia Pythona w porównaniu do innych języków programowania
+Python został zaprojektowany z myślą o łatwości czytania i ma pewne podobieństwa do języka angielskiego, z wpływami matematyki.
+W Pythonie do zakończenia polecenia używa się nowych linii, w przeciwieństwie do innych języków programowania, w których często stosuje się średniki lub nawiasy.
+Python opiera się na wcięciach, wykorzystując spacje, do definiowania zakresu, takiego jak zakres pętli, funkcji i klas. Inne języki programowania często używają w tym celu nawiasów klamrowych.
+PrzykładZdobądź własny serwer Python
+print("Hello, World!")
+Rozpocznij przygodę z Pythonem
+W W3Schools możesz wypróbować Pythona bez instalowania czegokolwiek.
+
+Nasz internetowy edytor języka Python działa bezpośrednio w przeglądarce i wyświetla zarówno kod, jak i wynik:
+
+PrzykładZdobądź własny serwer Python
+print("Hello, World!")
+Ten edytor będzie używany w całym samouczku w celu zaprezentowania różnych aspektów języka Python.
+
+Instalacja Pythona
+Jeśli jednak chcesz uruchomić Pythona na swoim komputerze, postępuj zgodnie z poniższymi instrukcjami.
+
+Na wielu komputerach z systemem Windows i Mac Python jest już preinstalowany.
+
+Aby sprawdzić, czy Python jest zainstalowany w systemie Windows, wyszukaj Python na pasku startowym lub uruchom następujące polecenie w wierszu poleceń (cmd.exe):
+
+C:\Users\Your Name>python --version
+Aby sprawdzić, czy masz zainstalowanego Pythona na Linuksie lub Macu, otwórz wiersz poleceń w systemie Linux lub otwórz Terminal w systemie Mac i wpisz:
+
+python --version
+Jeśli na Twoim komputerze nie ma zainstalowanego Pythona, możesz pobrać go bezpłatnie z oficjalnej strony: https://www.python.org/
+
+Szybki start w Pythonie
+Python jest interpretowanym językiem programowania, co oznacza, że ​​jako programista piszesz pliki Python (.py) w edytorze tekstu, a następnie umieszczasz te pliki w interpreterze Pythona w celu ich wykonania.
+
+Napiszmy nasz pierwszy plik Pythona, nazwany hello.py, co można zrobić w dowolnym edytorze tekstu:
+
+hello.py:
+
+print("Hello, World!")
+To takie proste. Zapisz plik. Otwórz wiersz poleceń, przejdź do katalogu, w którym zapisałeś plik i uruchom:
+
+C:\Users\Your Name>python hello.py
+Wynik powinien wyglądać następująco:
+
+Hello, World!
+Gratulacje, napisałeś i wykonałeś swój pierwszy program w Pythonie.
+
+USUŃ REKLAMY
+
+Wersja Pythona
+Aby sprawdzić wersję edytora w języku Python, możesz ją znaleźć importując sysmoduł:
+
+Przykład
+Sprawdź wersję edytora w Pythonie:
+
+import sys
+
+print(sys.version)
+Więcej na temat importowania modułów dowiesz się w naszym rozdziale poświęconym modułom Pythona .
+
+Wiersz poleceń Pythona
+Aby przetestować krótki fragment kodu w Pythonie, czasami najszybszym i najłatwiejszym rozwiązaniem jest niepisanie go w pliku. Jest to możliwe, ponieważ Python można uruchomić jako wiersz poleceń.
+
+Wpisz poniższe polecenie w wierszu poleceń systemu Windows, Mac lub Linux:
+
+C:\Users\Your Name>python
+Lub, jeśli polecenie „python” nie zadziałało, możesz spróbować „py”:
+C:\Users\Your Name>py
+Stamtąd możesz napisać dowolny kod Pythona, w tym nasz przykład „hello world” z wcześniejszej części tego samouczka:
+
+C:\Users\Your Name>python
+Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello, World!")
+Co spowoduje wyświetlenie w wierszu poleceń komunikatu „Witaj, świecie!”:
+
+C:\Users\Your Name>python
+Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello, World!")
+Hello, World!
+Kiedy już skończysz pracę z wierszem poleceń Pythona, możesz po prostu wpisać poniższe polecenie, aby wyjść z interfejsu wiersza poleceń Pythona:

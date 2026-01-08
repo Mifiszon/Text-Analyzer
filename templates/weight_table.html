@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Parametry klasyfikacji</h2>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <table class="table table-hover border shadow-sm">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Rola Semantyczna</th>
+                    <th>Waga Podstawowa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for role, weight in weights.items() %}
+                <tr>
+                    <td class="text-capitalize">{{ role }}</td>
+                    <td><strong>{{ weight }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <div class="alert alert-info">
+            <h5>Synergia (Współwystępowanie)</h5>
+            <p>Jeśli w tekście wystąpią obie role jednocześnie, doliczany jest bonus:</p>
+            <ul class="list-unstyled">
+                {% for pair, bonus in synergy.items() %}
+                <li><strong>{{ pair[0] }} + {{ pair[1] }}</strong>: +{{ bonus }} pkt</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

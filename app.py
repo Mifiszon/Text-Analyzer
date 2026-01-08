@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from markupsafe import Markup
 import os
 
 app = Flask(__name__)
@@ -61,17 +62,64 @@ def home():
 
 @app.route('/formularz')
 def dictionary():
-    return render_template('slownik.html', roles=CONFIG["roles"])
+    return render_template('keyword_form.html', roles=CONFIG["roles"])
 
 @app.route('/wagi')
 def weights():
-    return render_template('wagi.html', weights=CONFIG["weights"], synergy=CONFIG["synergy"])
+    return render_template('weight_table.html', weights=CONFIG["weights"], synergy=CONFIG["synergy"])
 
 @app.route('/teksty')
 def list_texts():
-    # Tu docelowo pętla po plikach w /data
-    files = ["tekst1.txt", "tekst2.txt"] # Przykład
-    return render_template('lista.html', files=files)
+    # Upewnij się, że te ścieżki odpowiadają Twoim folderom na dysku
+    base_path = 'data'
+    folders = {
+        'imola_1994': 'Tematyczny',
+        'others': 'Inny'
+    }
+    
+    results = []
+
+    for folder_name, label in folders.items():
+        folder_path = os.path.join(base_path, folder_name)
+        
+        if os.path.exists(folder_path):
+            for filename in os.listdir(folder_path):
+                if filename.endswith(".txt"):
+                    file_path = os.path.join(folder_path, filename)
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            analysis = analyze_text(content)
+                            results.append({
+                                "filename": filename,
+                                "label": label,
+                                "folder": folder_name, # potrzebne do linku
+                                "score": analysis["score"]
+                            })
+                    except Exception as e:
+                        print(f"Błąd odczytu pliku {filename}: {e}")
+
+    return render_template('text_list.html', results=results)
+
+@app.route('/tekst/<folder>/<filename>')
+def analyze_specific_text(folder, filename):
+    # folder to 'imola_1994' lub 'others' przekazane z URL
+    filepath = os.path.join('data', folder, filename)
+    
+    if not os.path.exists(filepath):
+        return "Plik nie istnieje", 404
+        
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    analysis = analyze_text(content)
+    
+    return render_template('analiza.html', 
+                           filename=filename,
+                           highlighted_content=Markup(analysis["highlighted_text"]),
+                           found_roles=analysis["found_roles"],
+                           all_roles=CONFIG["roles"].keys(),
+                           score=analysis["score"])
 
 if __name__ == '__main__':
     app.run(debug=True)

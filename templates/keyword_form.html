@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Definicje ról semantycznych</h2>
+<p class="text-muted">Poniższe słowa zostały wyodrębnione na podstawie analizy frekwencyjnej korpusu o Imoli.</p>
+
+<div class="row">
+    {% for role, words in roles.items() %}
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow-sm border-left-{{role}}">
+            <div class="card-header bg-dark text-white text-capitalize">
+                <strong>{{ role }}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for word in words %}
+                <li class="list-group-item">{{ word }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

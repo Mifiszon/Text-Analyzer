@@ -114,7 +114,7 @@ def analyze_specific_text(folder, filename):
     
     analysis = analyze_text(content)
     
-    return render_template('analiza.html', 
+    return render_template('analyze.html', 
                            filename=filename,
                            highlighted_content=Markup(analysis["highlighted_text"]),
                            found_roles=analysis["found_roles"],

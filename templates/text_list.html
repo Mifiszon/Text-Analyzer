@@ -1,38 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="mb-4">Korpus tekstów (100 plików)</h2>
+<div id="text-container">
+    </div>
 
-<table class="table table-striped shadow-sm">
-    <thead class="table-dark">
-        <tr>
-            <th>Nazwa pliku</th>
-            <th>Kategoria</th>
-            <th>Zgodność (0-1)</th>
-            <th>Akcja</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in results %}
-        <tr>
-            <td>{{ item.filename }}</td>
-            <td>
-                <span class="badge {% if item.label == 'Tematyczny' %}bg-primary{% else %}bg-secondary{% endif %}">
-                    {{ item.label }}
-                </span>
-            </td>
-            <td>
-                <div class="progress" style="height: 20px;">
-                    <div class="progress-bar {% if item.score > 0.6 %}bg-success{% elif item.score > 0.3 %}bg-warning{% else %}bg-danger{% endif %}" 
-                         role="progressbar" style="width: {{ item.score * 100 }}%">
-                        {{ item.score }}
-                    </div>
-                </div>
-            </td>
-            <td>
-                <a href="/tekst/{{ item.folder }}/{{ item.filename }}" class="btn btn-sm btn-outline-dark">Analizuj</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="text-center my-5">
+    <button id="load-more-btn" class="btn btn-primary btn-lg px-5">Wczytaj więcej tekstów...</button>
+</div>
+
+<script>
+    let currentOffset = 0;
+    const container = document.getElementById('text-container');
+    const btn = document.getElementById('load-more-btn');
+
+    function loadMore() {
+        btn.innerText = "Wczytywanie...";
+        fetch(`/load_texts/${currentOffset}`)
+            .then(response => response.text())
+            .then(html => {
+                if (html.trim() === "") {
+                    btn.className = "btn btn-secondary disabled";
+                } else {
+                    container.insertAdjacentHTML('beforeend', html);
+                    currentOffset += 10;
+                    btn.innerText = "Wczytaj więcej tekstów...";
+                }
+            });
+    }
+
+    loadMore();
+
+    btn.addEventListener('click', loadMore);
+</script>
 {% endblock %}

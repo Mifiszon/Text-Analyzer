@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from markupsafe import Markup
 import os
+import re
 
 app = Flask(__name__)
 
@@ -15,44 +16,65 @@ CONFIG = {
         "cel": ["bezpieczeństwo", "życie", "zwycięstwo", "czas"]
     },
     "weights": {
-        "sprawca": 0.2,
-        "zdarzenie": 0.3,
-        "obiekt": 0.1,
-        "narzedzie": 0.1,
+        "sprawca": 0.20,
+        "zdarzenie": 0.30,
+        "obiekt": 0.10,
+        "narzedzie": 0.10,
         "miejsce": 0.15,
         "cel": 0.15
     },
     "synergy": {
-        ("sprawca", "zdarzenie"): 0.1,
-        ("zdarzenie", "miejsce"): 0.05
-    }
+        ("sprawca", "zdarzenie"): 0.15,
+        ("zdarzenie", "miejsce"): 0.10,
+        ("sprawca", "miejsce"): 0.05,
+        ("obiekt", "narzedzie"): 0.05,
+    },
+    "group_bonus": 0.10
 }
 
 # 2. FUNKCJA ANALIZUJĄCA TEKST
 def analyze_text(content):
     score = 0.0
     found_roles = {}
-    highlighted = content
+    highlighted = content 
 
     for role, keywords in CONFIG["roles"].items():
-        found_in_role = [word for word in keywords if word.lower() in content.lower()]
-        if found_in_role:
-            found_roles[role] = found_in_role
+        # Sortujemy od najdłuższych słów
+        sorted_keywords = sorted(keywords, key=len, reverse=True)
+        found_in_this_role = []
+        
+        for word in sorted_keywords:
+            # \b oznacza granicę słowa (spacje, znaki interpunkcyjne, początek linii)
+            # re.IGNORECASE sprawia, że nie musimy robić .lower() na całym tekście
+            pattern = r'\b' + re.escape(word) + r'\b'
+            
+            if re.search(pattern, content, re.IGNORECASE):
+                # Jeśli słowo jeszcze nie zostało podświetlone (żeby nie podmieniać marków)
+                if word.lower() not in [f.lower() for f in found_in_this_role]:
+                    found_in_this_role.append(word)
+                    
+                    # Podmiana z zachowaniem granic słów
+                    highlighted = re.sub(pattern, f'<mark class="hl-{role}">\\g<0></mark>', highlighted, flags=re.IGNORECASE)
+        
+        if found_in_this_role:
+            found_roles[role] = found_in_this_role
             score += CONFIG["weights"][role]
-            # Podświetlanie w tekście
-            for word in found_in_role:
-                highlighted = highlighted.replace(word, f'<mark class="hl-{role}">{word}</mark>')
 
-    # Dodanie synergii
-    active_roles = found_roles.keys()
-    for (r1, r2), bonus in CONFIG["synergy"].items():
-        if r1 in active_roles and r2 in active_roles:
-            score += bonus
+    # Reszta logiki synergii pozostaje bez zmian
+    active = list(found_roles.keys())
+    from itertools import combinations
+    for r1, r2 in combinations(active, 2):
+        for (p1, p2), bonus in CONFIG["synergy"].items():
+            if (r1 == p1 and r2 == p2) or (r1 == p2 and r2 == p1):
+                score += bonus
+
+    if len(active) >= 3:
+        score += (len(active) - 2) * CONFIG.get("group_bonus", 0)
 
     return {
-        "highlighted_text": highlighted,
-        "score": round(min(score, 1.0), 2),
-        "found_roles": found_roles
+        "score": min(round(score, 2), 1.0),
+        "found_roles": found_roles,
+        "highlighted_text": highlighted
     }
 
 # 3. TRASY (ROUTES)
@@ -70,7 +92,6 @@ def weights():
 
 @app.route('/teksty')
 def list_texts():
-    # Upewnij się, że te ścieżki odpowiadają Twoim folderom na dysku
     base_path = 'data'
     folders = {
         'imola_1994': 'Tematyczny',
@@ -93,7 +114,7 @@ def list_texts():
                             results.append({
                                 "filename": filename,
                                 "label": label,
-                                "folder": folder_name, # potrzebne do linku
+                                "folder": folder_name,
                                 "score": analysis["score"]
                             })
                     except Exception as e:
@@ -103,7 +124,6 @@ def list_texts():
 
 @app.route('/tekst/<folder>/<filename>')
 def analyze_specific_text(folder, filename):
-    # folder to 'imola_1994' lub 'others' przekazane z URL
     filepath = os.path.join('data', folder, filename)
     
     if not os.path.exists(filepath):
@@ -120,6 +140,39 @@ def analyze_specific_text(folder, filename):
                            found_roles=analysis["found_roles"],
                            all_roles=CONFIG["roles"].keys(),
                            score=analysis["score"])
+
+@app.route('/load_texts/<int:offset>')
+def load_texts(offset):
+    limit = 10
+    base_path = 'data'
+    folders = {'imola_1994': 'Tematyczny', 'others': 'Inny'}
+    
+    all_files = []
+    for folder_name, label in folders.items():
+        folder_path = os.path.join(base_path, folder_name)
+        if os.path.exists(folder_path):
+            for filename in os.listdir(folder_path):
+                if filename.endswith(".txt"):
+                    all_files.append((folder_name, filename, label))
+    
+    chunk = all_files[offset : offset + limit]
+    
+    results = []
+    for folder, filename, label in chunk:
+        filepath = os.path.join(base_path, folder, filename)
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        analysis = analyze_text(content)
+        results.append({
+            "filename": filename,
+            "label": label,
+            "score": analysis["score"],
+            "highlighted": Markup(analysis["highlighted_text"]),
+            "found_roles": analysis["found_roles"]
+        })
+    
+    return render_template('single_text.html', results=results)
 
 if __name__ == '__main__':
     app.run(debug=True)

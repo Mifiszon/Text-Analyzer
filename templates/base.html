@@ -5,26 +5,80 @@
     <title>Klasyfikator Semantyczny</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .hl-sprawca { background-color: #ffadad; }
-        .hl-zdarzenie { background-color: #ffd6a5; }
-        /* dodamy resztę kolorów dla ról później */
+        /* Twoje kolory ról */
+        .hl-sprawca { background-color: #459fff; color: white; padding: 2px 4px; border-radius: 3px; }
+        .hl-zdarzenie { background-color: #f888e7; color: black; padding: 2px 4px; border-radius: 3px; }
+        .hl-obiekt { background-color: #ffff88; color: black; padding: 2px 4px; border-radius: 3px; }
+        .hl-narzedzie { background-color: #ee7f00; color: white; padding: 2px 4px; border-radius: 3px; }
+        .hl-miejsce { background-color: #5eb572; color: white; padding: 2px 4px; border-radius: 3px; }
+        .hl-cel { background-color: #7a3c7a; color: white; padding: 2px 4px; border-radius: 3px; }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.85) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #459fff;
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #459fff !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #459fff !important;
+            transform: translateY(-2px);
+        }
+
+        .text-content {
+            line-height: 2.0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        [class^="hl-"] {
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .main-container {
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top mb-4">
         <div class="container">
-            <a class="navbar-brand" href="/">NLP-Klasyfikator</a>
-            <div class="navbar-nav">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/formularz">Słownik</a>
-                <a class="nav-link" href="/wagi">Tabela Wag</a>
-                <a class="nav-link" href="/teksty">Lista Tekstów</a>
+            <a class="navbar-brand">Michał Ogiba | AEI</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="/">Strona główna</a>
+                    <a class="nav-link" href="/formularz">Słownik</a>
+                    <a class="nav-link" href="/wagi">Wagi i Synergia</a>
+                    <a class="nav-link text-white fw-bold border border-primary rounded px-3" href="/teksty">LISTA TEKSTÓW</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container main-container">
         {% block content %}{% endblock %}
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

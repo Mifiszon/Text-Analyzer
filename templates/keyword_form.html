@@ -1,22 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="mb-4">Definicje ról semantycznych</h2>
-<p class="text-muted">Poniższe słowa zostały wyodrębnione na podstawie analizy frekwencyjnej korpusu o Imoli.</p>
+<h2 class="mb-4 text-center">Definicje ról semantycznych</h2>
 
-<div class="row">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for role, words in roles.items() %}
-    <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm border-left-{{role}}">
-            <div class="card-header bg-dark text-white text-capitalize">
-                <strong>{{ role }}</strong>
+    <div class="col">
+        <div class="card h-100 shadow-sm border-custom">
+            
+            <div class="card-header hl-{{role}} text-black text-capitalize py-3 justify-content-center">
+                <h5 class="mb-0 fw-bold">{{ role }}</h5>
             </div>
-            <ul class="list-group list-group-flush">
-                {% for word in words %}
-                <li class="list-group-item">{{ word }}</li>
-                {% endfor %}
-            </ul>
+            
+            <div class="card-body bg-light">
+                <div class="d-flex flex-wrap gap-2">
+                    {% for word in words %}
+                        <span class="badge bg-white text-dark border shadow-sm p-2 px-3" style="font-size: 0.9rem; font-weight: 500;">
+                            {{ word }}
+                        </span>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<style>
+    .badge {
+        white-space: normal;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .card-header {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        border-bottom: none;
+    }
+
+    .border-custom { border: 2px solid black !important; }
+    .card { overflow: hidden; }
+</style>
 {% endblock %}

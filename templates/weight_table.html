@@ -1,37 +1,77 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Parametry klasyfikacji</h2>
+<h2 class="mb-4 text-dark">Parametry klasyfikacji</h2>
 
-<div class="row mt-4">
-    <div class="col-md-6">
-        <table class="table table-hover border shadow-sm">
-            <thead class="table-secondary">
-                <tr>
-                    <th>Rola Semantyczna</th>
-                    <th>Waga Podstawowa</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for role, weight in weights.items() %}
-                <tr>
-                    <td class="text-capitalize">{{ role }}</td>
-                    <td><strong>{{ weight }}</strong></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<div class="row g-4">
+    <div class="col-md-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0">Wagi ról semantycznych</h5>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Rola</th>
+                            <th class="text-center">Waga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for role, weight in weights.items() %}
+                        <tr>
+                            <td>
+                                <span class="hl-{{role}} px-3 py-1 d-inline-block text-center rounded shadow-sm" style="min-width: 120px;">
+                                    {{ role }}
+                                </span>
+                            </td>
+                            <td class="text-center align-middle"><strong>{{ weight }}</strong></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6">
-        <div class="alert alert-info">
-            <h5>Synergia (Współwystępowanie)</h5>
-            <p>Jeśli w tekście wystąpią obie role jednocześnie, doliczany jest bonus:</p>
-            <ul class="list-unstyled">
-                {% for pair, bonus in synergy.items() %}
-                <li><strong>{{ pair[0] }} + {{ pair[1] }}</strong>: +{{ bonus }} pkt</li>
-                {% endfor %}
-            </ul>
+    <div class="col-md-7">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-dark text-white py-3">
+                <h5 class="mb-0">Premie za współwystępowanie (Synergia)</h5>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Kombinacja ról</th>
+                            <th class="text-center">Bonus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pair, bonus in synergy.items() %}
+                        <tr>
+                            <td class="align-middle">
+                                <span class="hl-{{pair[0]}} px-2 small">{{ pair[0] }}</span>
+                                <span class="mx-1 text-muted">+</span>
+                                <span class="hl-{{pair[1]}} px-2 small">{{ pair[1] }}</span>
+                            </td>
+                            <td class="text-center align-middle text-success font-monospace">
+                                <strong>+{{ bonus }}</strong>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="alert bg-dark text-white mt-3 border-0 shadow-sm">
+            <small><strong>Bonus grupowy:</strong> +0.05 za każdą dodatkową rolę powyżej dwóch.</small>
         </div>
     </div>
 </div>
+
+<style>
+    .shadow-text { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    .card { background: rgba(255, 255, 255, 0.9); }
+</style>
 {% endblock %}

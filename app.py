@@ -17,19 +17,30 @@ CONFIG = {
     },
     "weights": {
         "sprawca": 0.20,
-        "zdarzenie": 0.30,
+        "zdarzenie": 0.20,
+        "miejsce": 0.15,
         "obiekt": 0.10,
         "narzedzie": 0.10,
-        "miejsce": 0.15,
-        "cel": 0.15
+        "cel": 0.10
     },
     "synergy": {
         ("sprawca", "zdarzenie"): 0.15,
         ("zdarzenie", "miejsce"): 0.10,
         ("sprawca", "miejsce"): 0.05,
         ("obiekt", "narzedzie"): 0.05,
+        ("zdarzenie", "obiekt"): 0.05,
+        ("zdarzenie", "narzedzie"): 0.05,
+        ("sprawca", "cel"): 0.05,
+        ("zdarzenie", "cel"): 0.05,
+        ("sprawca", "obiekt"): 0.03,
+        ("sprawca", "narzedzie"): 0.03,
+        ("obiekt", "miejsce"): 0.03,
+        ("narzedzie", "miejsce"): 0.03,
+        ("miejsce", "cel"): 0.03,
+        ("obiekt", "cel"): 0.02,
+        ("narzedzie", "cel"): 0.02
     },
-    "group_bonus": 0.10
+    "group_bonus": 0.05
 }
 
 # 2. FUNKCJA ANALIZUJĄCA TEKST
@@ -39,28 +50,22 @@ def analyze_text(content):
     highlighted = content 
 
     for role, keywords in CONFIG["roles"].items():
-        # Sortujemy od najdłuższych słów
         sorted_keywords = sorted(keywords, key=len, reverse=True)
         found_in_this_role = []
         
         for word in sorted_keywords:
-            # \b oznacza granicę słowa (spacje, znaki interpunkcyjne, początek linii)
-            # re.IGNORECASE sprawia, że nie musimy robić .lower() na całym tekście
             pattern = r'\b' + re.escape(word) + r'\b'
             
             if re.search(pattern, content, re.IGNORECASE):
-                # Jeśli słowo jeszcze nie zostało podświetlone (żeby nie podmieniać marków)
                 if word.lower() not in [f.lower() for f in found_in_this_role]:
                     found_in_this_role.append(word)
                     
-                    # Podmiana z zachowaniem granic słów
                     highlighted = re.sub(pattern, f'<mark class="hl-{role}">\\g<0></mark>', highlighted, flags=re.IGNORECASE)
         
         if found_in_this_role:
             found_roles[role] = found_in_this_role
             score += CONFIG["weights"][role]
 
-    # Reszta logiki synergii pozostaje bez zmian
     active = list(found_roles.keys())
     from itertools import combinations
     for r1, r2 in combinations(active, 2):

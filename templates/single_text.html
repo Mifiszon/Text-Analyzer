@@ -1,8 +1,7 @@
 {% for item in results %}
-<div class="card shadow-sm mb-5 border-0">
+<div class="card shadow-sm mb-5 border-0" style="background: rgba(255, 255, 255, 0.9);">
     <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
         <h5 class="mb-0">{{ item.filename }}</h5>
-        
         <span class="badge p-2 fs-5 shadow-sm 
             {% if item.score >= 0.65 %}bg-success{% elif item.score >= 0.32 %}bg-warning text-dark{% else %}bg-danger{% endif %}">
             Zgodność: {{ item.score }}
@@ -13,37 +12,30 @@
         <div class="row">
             <div class="col-md-8 border-end">
                 <p class="text-muted small mb-2">Kategoria: {{ item.label }}</p>
-                <div class="text-content p-3 bg-light rounded" style="max-height: 400px; overflow-y: auto; border: 1px solid #eee;">
+                <div class="text-content p-3 bg-white rounded" style="max-height: 400px; overflow-y: auto; border: 1px solid #eee;">
                     {{ item.highlighted }}
                 </div>
             </div>
 
             <div class="col-md-4">
-                <h6 class="fw-bold mb-3">Analiza ról semantycznych:</h6>
+                <h6 class="fw-bold mb-3">Wykryte role semantyczne:</h6>
                 <div class="list-group list-group-flush">
                     {% for role in ['sprawca', 'zdarzenie', 'obiekt', 'narzedzie', 'miejsce', 'cel'] %}
-                    <div class="list-group-item px-0 py-1 border-0">
+                    <div class="list-group-item px-0 py-2 border-0 bg-transparent">
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="hl-{{ role }} px-2 rounded small text-capitalize fw-bold" style="font-size: 0.8rem;">
+                            <span class="hl-{{ role }} px-3 py-1 rounded small text-capitalize fw-bold" style="font-size: 0.85rem; min-width: 100px; text-align: center;">
                                 {{ role }}
                             </span>
+                            
                             {% if role in item.found_roles %}
-                                <span class="text-success fw-bold">✓</span>
+                                <span class="text-success px-3">✓</span>
                             {% else %}
-                                <span class="text-muted opacity-25">✕</span>
-                            {% endif %}
-                        </div>
-                        <div class="small text-muted ps-2" style="font-size: 0.75rem;">
-                            {% if role in item.found_roles %}
-                                {{ item.found_roles[role]|join(', ') }}
-                            {% else %}
-                                <em>Brak dopasowań</em>
+                                <span class="text-danger px-3">✕</span>
                             {% endif %}
                         </div>
                     </div>
                     {% endfor %}
                 </div>
-                
             </div>
         </div>
     </div>

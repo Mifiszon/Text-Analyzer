@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from markupsafe import Markup
 import os
 import re
+from clp3 import clp
 
 # from clp3 import clp 
 
@@ -51,19 +52,30 @@ def analyze_text(content):
     found_roles = {}
     highlighted = content 
 
+    raw_words = re.findall(r'\b\w+\b', content.lower())
+    
+    lemmatized_content = {}
+    for w in raw_words:
+        ids = clp(w)
+        if ids:
+            lemmatized_content[w] = clp.bform(ids[0]).lower()
+
     for role, keywords in CONFIG["roles"].items():
-        sorted_keywords = sorted(keywords, key=len, reverse=True)
-        found_in_this_role = []
+        found_in_role = []
         
-        for word in sorted_keywords:
-            pattern = r'\b' + re.escape(word) + r'\b'
-            if re.search(pattern, content, re.IGNORECASE):
-                if word.lower() not in [f.lower() for f in found_in_this_role]:
-                    found_in_this_role.append(word)
+        for kw in keywords:
+            kw_base = kw.lower()
+            
+            for original_word, base_form in lemmatized_content.items():
+                if base_form == kw_base:
+                    if kw_base not in found_in_role:
+                        found_in_role.append(kw_base)
+                    
+                    pattern = r'\b' + re.escape(original_word) + r'\b'
                     highlighted = re.sub(pattern, f'<mark class="hl-{role}">\\g<0></mark>', highlighted, flags=re.IGNORECASE)
-        
-        if found_in_this_role:
-            found_roles[role] = found_in_this_role
+
+        if found_in_role:
+            found_roles[role] = found_in_role
             score += CONFIG["weights"][role]
 
     active_roles = list(found_roles.keys())
@@ -132,8 +144,9 @@ def load_texts(offset):
 @app.route('/frekwencja')
 def frequency_list():
     all_files = get_all_files()
+    
     stats = {'tematyczne': {}, 'pozostale': {}}
-    stop_words = ["oraz", "jest", "było", "tylko", "przez", "jego", "który", "były", "można", "roku", "dla", "się", "nie", "pod", "nad"]
+    stop_words = ["być", "ten", "który", "siebie", "on", "ona", "oraz", "jeśli", "tylko", "jaki", "swój"]
 
     for folder, filename, label in all_files:
         filepath = os.path.join('data', folder, filename)
@@ -142,10 +155,14 @@ def frequency_list():
             analysis = analyze_text(content)
             target = 'tematyczne' if analysis['score'] >= 0.5 else 'pozostale'
             
-            words = re.findall(r'\b\w{4,}\b', content.lower())
+            words = re.findall(r'\b\w+\b', content.lower())
             for w in words:
-                if w not in stop_words:
-                    stats[target][w] = stats[target].get(w, 0) + 1
+                ids = clp(w)
+                if ids:
+                    base = clp.bform(ids[0]).lower()
+                    
+                    if len(base) > 3 and base not in stop_words:
+                        stats[target][base] = stats[target].get(base, 0) + 1
 
     top_t = sorted(stats['tematyczne'].items(), key=lambda x: x[1], reverse=True)[:30]
     top_p = sorted(stats['pozostale'].items(), key=lambda x: x[1], reverse=True)[:30]
@@ -153,4 +170,4 @@ def frequency_list():
     return render_template('freq.html', tematyczne=top_t, pozostale=top_p)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

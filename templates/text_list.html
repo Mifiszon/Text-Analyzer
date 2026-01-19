@@ -1,34 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="text-container">
-    </div>
 
-<div class="text-center my-5">
-    <button id="load-more-btn" class="btn btn-primary btn-lg px-5">Wczytaj więcej tekstów...</button>
+<div class="container my-4">
+    {% include "single_text.html" %}
 </div>
 
-<script>
-    let currentOffset = 0;
-    const container = document.getElementById('text-container');
-    const btn = document.getElementById('load-more-btn');
-
-    function loadMore() {
-        btn.innerText = "Wczytywanie...";
-        fetch(`/load_texts/${currentOffset}`)
-            .then(response => response.text())
-            .then(html => {
-                if (html.trim() === "") {
-                    btn.className = "btn btn-secondary disabled";
-                } else {
-                    container.insertAdjacentHTML('beforeend', html);
-                    currentOffset += 10;
-                    btn.innerText = "Wczytaj więcej tekstów...";
-                }
-            });
-    }
-
-    loadMore();
-
-    btn.addEventListener('click', loadMore);
-</script>
 {% endblock %}

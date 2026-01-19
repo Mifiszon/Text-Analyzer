@@ -13,7 +13,7 @@
             <div class="col-md-8 border-end">
                 <p class="text-muted small mb-2">Kategoria: {{ item.label }}</p>
                 <div class="text-content p-3 bg-white rounded" style="max-height: 400px; overflow-y: auto; border: 1px solid #eee;">
-                    {{ item.highlighted }}
+                    {{ item.highlighted|safe }}
                 </div>
             </div>
 

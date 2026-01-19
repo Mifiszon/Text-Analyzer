@@ -17,12 +17,12 @@ CONFIG = {
         "cel": ["bezpieczeństwo", "życie", "zwycięstwo", "czas"]
     },
     "weights": {
-        "sprawca": 0.25, "zdarzenie": 0.12, "miejsce": 0.15,
+        "sprawca": 0.20, "zdarzenie": 0.12, "miejsce": 0.15,
         "obiekt": 0.08, "narzedzie": 0.05, "cel": 0.05
     },
     "synergy": {
-        ("sprawca", "zdarzenie"): 0.20, ("zdarzenie", "miejsce"): 0.05,
-        ("sprawca", "miejsce"): 0.30, ("obiekt", "narzedzie"): 0.02,
+        ("sprawca", "zdarzenie"): 0.15, ("zdarzenie", "miejsce"): 0.05,
+        ("sprawca", "miejsce"): 0.25, ("obiekt", "narzedzie"): 0.02,
         ("zdarzenie", "obiekt"): 0.02, ("zdarzenie", "narzedzie"): 0.02,
         ("sprawca", "cel"): 0.05, ("zdarzenie", "cel"): 0.02,
         ("sprawca", "obiekt"): 0.05, ("sprawca", "narzedzie"): 0.05,

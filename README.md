@@ -106,4 +106,4 @@ Possible extensions:
 
 **Michał Ogiba** — [linkedin.com/in/michalogiba](https://linkedin.com/in/michalogiba) · [github.com/Mifiszon](https://github.com/Mifiszon)
 
-*University project, Jagiellonian University — Digital Information Processing, 2024*
+*University project, Jagiellonian University — Digital Information Processing, 2025*
